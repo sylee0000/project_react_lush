@@ -1,0 +1,13 @@
+.detail{
+  width: 1240px;
+  margin: 0 auto;
+  .detail_box{
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0;
+    .detail_info{
+      width: 400px;
+      text-align: center;
+    }
+  }
+}

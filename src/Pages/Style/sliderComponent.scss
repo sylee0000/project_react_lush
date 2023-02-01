@@ -1,0 +1,16 @@
+
+.md_choice{
+  width: 1240px;
+  height: 500px;
+  margin-bottom: 100px;
+  .md_choice_box{
+    margin: 0;
+    text-align: center;
+    p{
+      height: 30px;
+    }
+    img{
+      display: inline-block;
+    }
+  }
+}

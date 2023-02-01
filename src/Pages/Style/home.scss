@@ -1,0 +1,98 @@
+
+/*--- 각타이틀들 믹스인으로 사용하기---*/
+
+@mixin title($textAlign,$height){
+  text-align: $textAlign;
+  height: $height;
+}
+
+/*---상픔사이즈 믹스인으로 사용하기---*/
+
+@mixin size($width){
+  width: $width;
+}
+
+/*---배너사이즈 믹스인으로 사용하기---*/
+
+@mixin bannerSize($width,$height){
+  width: $width;
+  height: $height;
+}
+
+/*---각 섹션들타이틀---*/
+
+.title{
+  @include title(center, 100px);
+  line-height: 100px;
+}
+
+/*---메인비주얼 txt---*/
+
+@mixin mainvisual_txt{
+  font-size: 80px;
+  font-weight: bold;
+}
+
+@mixin mainvisual_s_txt{
+  font-size: 25px;
+}
+
+.main_visual{
+  position: relative;
+  .mainvisual_txt{
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    bottom: 120px;
+    left: 150px;
+    color: white;
+    .first_txt{
+      @include mainvisual_txt;
+    }
+    .last_txt{
+      @include mainvisual_s_txt;
+    }
+  }
+}
+
+/*---best_pro---*/
+
+.bestpro{
+  width: 1240px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 auto;
+    .bestpro_box{
+      @include size(288px);
+      text-align: center;
+      p{
+        height: 30px;
+      }
+    }
+}
+
+.event_banner{
+  @include bannerSize(100%,400px);
+  overflow: hidden;
+  position: relative;
+  .rolling_banner_box{
+    width: 500%;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: rolling_banner 10s infinite;
+    >div{
+      float: left;
+    }
+  }
+
+  @keyframes rolling_banner{ 
+    0%{left: 0%;}
+    25%{left: -100%;}
+    50%{left: -200%;}
+    75%{left: -300%;}  
+    100%{left: 0%;}    
+  }
+}

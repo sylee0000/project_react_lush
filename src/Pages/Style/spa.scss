@@ -1,0 +1,36 @@
+.spa_title_img{
+  img{
+    width: 100%;
+  }
+}
+
+.spa_box{
+  width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  > div{
+    width: 287.5px;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-right: 30px;
+    background-color: #faf7f7;
+    &:hover{
+      background-color: #f2f2f2;
+      cursor: pointer;
+    }
+    &:nth-child(4n){
+      margin-right: 0;
+    }
+  }
+
+}
+
+.spa_title_txt{
+  text-align: center;
+  h1{
+    height: 100px;
+    line-height: 80px;
+    font-size: 50px;
+  }
+}

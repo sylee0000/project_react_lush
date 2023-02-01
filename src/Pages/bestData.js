@@ -1,0 +1,197 @@
+const bests = [
+  {
+    id: 'best01',
+    detailimage: process.env.PUBLIC_URL+'/images/detail_01.jpg',
+    image: process.env.PUBLIC_URL+'/images/best_01.png',
+    material: 'vegan',
+    name: '인터갈락밤',
+    title: '배쓰밤',
+    price: 17000,
+    descimageTop: process.env.PUBLIC_URL+'/images/detail_01_desc01.jpg',
+    descimageMid: process.env.PUBLIC_URL+'/images/detail_01_desc02.jpg',
+    descimageBottom: process.env.PUBLIC_URL+'/images/detail_01_desc03.jpg'
+  },
+  {
+    id: 'best02',
+    detailimage: process.env.PUBLIC_URL+'/images/detail_02.jpg',
+    image: process.env.PUBLIC_URL+'/images/best_02.png',
+    material: 'vegan',
+    name: '가디스',
+    title: '배쓰밤',
+    price: 20000,
+    descimageTop: process.env.PUBLIC_URL+'/images/detail_02_desc01.jpg',
+    descimageMid: process.env.PUBLIC_URL+'/images/detail_02_desc02.jpg',
+    descimageBottom: process.env.PUBLIC_URL+'/images/detail_02_desc03.jpg'
+  },
+  {
+    id: 'best03',
+    detailimage: process.env.PUBLIC_URL+'/images/detail_03.jpg',
+    image: process.env.PUBLIC_URL+'/images/best_03.png',
+    material: 'vegan',
+    name: '사쿠라',
+    title: '배쓰밤',
+    price: 13000,
+    descimageTop: process.env.PUBLIC_URL+'/images/detail_03_desc01.jpg',
+    descimageMid: process.env.PUBLIC_URL+'/images/detail_03_desc02.jpg',
+    descimageBottom: process.env.PUBLIC_URL+'/images/detail_03_desc03.jpg'
+  },
+  {
+    id: 'best04',
+    detailimage: process.env.PUBLIC_URL+'/images/detail_04.jpg',
+    image: process.env.PUBLIC_URL+'/images/best_04.png',
+    material: 'vegan',
+    name: '씨 베지터블',
+    title: '솝',
+    price: 12000,
+    descimageTop: process.env.PUBLIC_URL+'/images/detail_04_desc01.jpg',
+    descimageMid: process.env.PUBLIC_URL+'/images/detail_04_desc02.jpg',
+    descimageBottom: process.env.PUBLIC_URL+'/images/detail_04_desc03.jpg'
+  },
+  {
+    id: 'best05',
+    detailimage: process.env.PUBLIC_URL+'/images/detail_05.jpg',
+    image: process.env.PUBLIC_URL+'/images/best_05.png',
+    material: 'vegan',
+    name: '슬리피',
+    title: '솝',
+    price: 16000,
+    descimageTop: process.env.PUBLIC_URL+'/images/detail_05_desc01.jpg',
+    descimageMid: process.env.PUBLIC_URL+'/images/detail_05_desc02.jpg',
+    descimageBottom: process.env.PUBLIC_URL+'/images/detail_05_desc03.jpg'
+  },
+  {
+    id: 'best06',
+    detailimage: process.env.PUBLIC_URL+'/images/detail_06.jpg',
+    image: process.env.PUBLIC_URL+'/images/best_06.png',
+    material: 'vegan',
+    name: '허벌리즘 100g/250g',
+    title: '프레쉬 클렌저',
+    price: 22000,
+    descimageTop: process.env.PUBLIC_URL+'/images/detail_06_desc01.jpg',
+    descimageMid: process.env.PUBLIC_URL+'/images/detail_06_desc02.jpg',
+    descimageBottom: process.env.PUBLIC_URL+'/images/detail_06_desc03.jpg'
+  },
+  {
+    id: 'best07',
+    detailimage: process.env.PUBLIC_URL+'/images/detail_07.jpg',
+    image: process.env.PUBLIC_URL+'/images/best_07.png',
+    material: 'vegan',
+    name: '엔젤스 온 배너 스킨',
+    title: '프레쉬 클렌저',
+    price: 22000,
+    descimageTop: process.env.PUBLIC_URL+'/images/detail_07_desc01.jpg',
+    descimageMid: process.env.PUBLIC_URL+'/images/detail_07_desc02.jpg',
+    descimageBottom: process.env.PUBLIC_URL+'/images/detail_07_desc03.jpg'
+  },
+  {
+    id: 'best08',
+    detailimage: process.env.PUBLIC_URL+'/images/detail_08.jpg',
+    image: process.env.PUBLIC_URL+'/images/best_08.png',
+    material:'vegan',
+    name: '마스크 오브 매그너민티 125g',
+    title: '파워마스크',
+    price: 22000,
+    descimageTop: process.env.PUBLIC_URL+'/images/detail_08_desc01.jpg',
+    descimageMid: process.env.PUBLIC_URL+'/images/detail_08_desc02.jpg',
+    descimageBottom: process.env.PUBLIC_URL+'/images/detail_08_desc03.jpg'
+  },
+  {
+    id: 'best09',
+    detailimage: process.env.PUBLIC_URL+'/images/detail_09.jpg',
+    image: process.env.PUBLIC_URL+'/images/best_09.png',
+    material: '국내제조',
+    name: '코스메틱 워리어',
+    title: '프레쉬 페이스 마스크',
+    price: 25000,
+    descimageTop: process.env.PUBLIC_URL+'/images/detail_09_desc01.jpg',
+    descimageMid: process.env.PUBLIC_URL+'/images/detail_09_desc02.jpg',
+    descimageBottom: process.env.PUBLIC_URL+'/images/detail_09_desc03.jpg'
+  },
+  {
+    id: 'best10',
+    detailimage: process.env.PUBLIC_URL+'/images/detail_10.jpg',
+    image: process.env.PUBLIC_URL+'/images/best_10.png',
+    material: 'vegan',
+    name: '대디-오',
+    title: '샴푸',
+    price: 19000,
+    descimageTop: process.env.PUBLIC_URL+'/images/detail_10_desc01.jpg',
+    descimageMid: process.env.PUBLIC_URL+'/images/detail_10_desc02.jpg',
+    descimageBottom: process.env.PUBLIC_URL+'/images/detail_10_desc03.jpg'
+  },
+  {
+    id: 'best11',
+    detailimage: process.env.PUBLIC_URL+'/images/detail_11.jpg',
+    image: process.env.PUBLIC_URL+'/images/best_11.png',
+    material: 'vegan',
+    name: '와사비 샨 쿠이',
+    title: '샴푸',
+    price: 26000,
+    descimageTop: process.env.PUBLIC_URL+'/images/detail_11_desc01.jpg',
+    descimageMid: process.env.PUBLIC_URL+'/images/detail_11_desc02.jpg',
+    descimageBottom: process.env.PUBLIC_URL+'/images/detail_11_desc03.jpg' 
+  },
+  {
+    id: 'best12',
+    detailimage: process.env.PUBLIC_URL+'/images/detail_12.jpg',
+    image: process.env.PUBLIC_URL+'/images/best_12.png',
+    material: 'original',
+    name: '코코너 라이스 케이크',
+    title: '샴푸 바',
+    price: 19000,
+    descimageTop: process.env.PUBLIC_URL+'/images/detail_12_desc01.jpg',
+    descimageMid: process.env.PUBLIC_URL+'/images/detail_12_desc02.jpg',
+    descimageBottom: process.env.PUBLIC_URL+'/images/detail_12_desc03.jpg' 
+  },
+  {
+    id: 'best13',
+    detailimage: process.env.PUBLIC_URL+'/images/detail_13.jpg',
+    image: process.env.PUBLIC_URL+'/images/best_13.png',
+    material: 'vegan',
+    name: '독립',
+    title: '아이라이너',
+    price: 35000,
+    descimageTop: process.env.PUBLIC_URL+'/images/detail_13_desc01.jpg',
+    descimageMid: process.env.PUBLIC_URL+'/images/detail_13_desc02.jpg',
+    descimageBottom: process.env.PUBLIC_URL+'/images/detail_13_desc03.jpg'
+  },
+  {
+    id: 'best14',
+    detailimage: process.env.PUBLIC_URL+'/images/detail_14.jpg',
+    image: process.env.PUBLIC_URL+'/images/best_14.png',
+    material: 'vegan',
+    name: '슬랩스틱 1C',
+    title: '고체 파운데이션',
+    price: 34000,
+    descimageTop: process.env.PUBLIC_URL+'/images/detail_14_desc01.jpg',
+    descimageMid: process.env.PUBLIC_URL+'/images/detail_14_desc02.jpg',
+    descimageBottom: process.env.PUBLIC_URL+'/images/detail_14_desc03.jpg'
+  },
+  {
+    id: 'best15',
+    detailimage: process.env.PUBLIC_URL+'/images/detail_15.jpg',
+    image: process.env.PUBLIC_URL+'/images/best_15.png',
+    material: 'vegan',
+    name: '더티 보디 스프레이',
+    title: '보디 스프레이',
+    price: 60000,
+    descimageTop: process.env.PUBLIC_URL+'/images/detail_15_desc01.jpg',
+    descimageMid: process.env.PUBLIC_URL+'/images/detail_15_desc02.jpg',
+    descimageBottom: process.env.PUBLIC_URL+'/images/detail_15_desc03.jpg' 
+  },
+  {
+    id: 'best16',
+    detailimage: process.env.PUBLIC_URL+'/images/detail_16.jpg',
+    image: process.env.PUBLIC_URL+'/images/best_16.png',
+    material: 'vegan',
+    name: '트와일라잇',
+    title: '슬리피 보디 스프레이',
+    price: 60000,
+    descimageTop: process.env.PUBLIC_URL+'/images/detail_16_desc01.jpg',
+    descimageMid: process.env.PUBLIC_URL+'/images/detail_16_desc02.jpg',
+    descimageBottom: process.env.PUBLIC_URL+'/images/detail_16_desc03.jpg' 
+  }
+
+]
+
+export default bests

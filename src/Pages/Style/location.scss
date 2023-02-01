@@ -1,0 +1,33 @@
+.location_title_img{
+  img{
+    width: 100%;
+  }
+}
+
+.location_box{
+  width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  img{
+    width: 383.333px;
+    height: 300px;
+
+  }
+  p{
+    height: 80px;
+    line-height: 80px;
+    margin-bottom: 0;
+    text-align: center;
+  }
+}
+
+.location_title_txt{
+  text-align: center;
+  h1{
+    height: 100px;
+    line-height: 80px;
+    font-size: 50px;
+  }
+}

@@ -1,38 +1,136 @@
-.App {
-  text-align: center;
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+a{color: black; text-decoration: none;}
+
+
+.container{
+  width: 1240px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar-expand .navbar-nav{
+  width: 70%;
+  height: 80px;
+  line-height: 65px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar-expand .navbar-nav i{
+  font-size: 32px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.gnb{
+  width: 30%;
+  height: 80px;
+  overflow: hidden;
+  margin: 0;
+  padding: 20px 90px;
+}
+
+.gnb li{
+  float: left;
+}
+
+.gnb li:nth-child(2){
+  margin: 8px 30px;
+}
+
+.footer_icon{
+  width: 100%;
+  background-color: #f2f2f2;
+}
+
+.footer_icon .footer_icon_box{
+  width: 1240px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.footer_icon .footer_icon_box div{
+  width: 206px;
+  height: 170px;
+  float: left;
+}
+
+.footer_icon .footer_icon_box div img{
+  width: 150px;
+  height: 150px;
+}
+
+.footer{
+  width: 100%;
+  background-color: black;
+}
+
+.footer .footer_box{
+  width: 1240px;
+  margin: 0 auto;
+  color: white;
+  padding: 20px 20px;
+}
+
+.footer .footer_box a{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.footer .footer_box .footer_top{
+  display: flex;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer .footer_box .footer_top div{
+  width: 620px;
 }
+
+.footer .footer_box .footer_top div input{
+  margin: 0 10px 30px 0;
+}
+
+.footer .footer_box .footer_top nav{
+  width: 620px;
+}
+
+.footer .footer_box .footer_top nav ul{
+  overflow: hidden;
+}
+
+.footer .footer_box .footer_top nav ul li{
+  float: left;
+  width: 155px;
+  text-align: center;
+}
+
+.footer .footer_box .footer_bottom{
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer .footer_box .footer_bottom .footer_contact{
+  width: 620px;
+  overflow: hidden;
+}
+
+.footer .footer_box .footer_bottom .footer_contact>div{
+  width: 300px;
+  float: left;
+}
+
+.footer .footer_box .footer_bottom .footer_contact>div p{
+  margin-bottom: 0;
+}
+
+.footer .footer_box .footer_bottom .footer_contact>div p:first-child{
+  font-weight: bold;
+}
+
+.footer .footer_box .footer_bottom .footer_info{
+  width: 620px;
+  font-size: 14px;
+}
+
+.footer .footer_box .footer_bottom .footer_info p{
+  margin-left: 70px;
+}
+
+
+
+
+
