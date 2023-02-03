@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/project_react_lush/static/css/main.9ebb864d.css",
-    "main.js": "/project_react_lush/static/js/main.80937cac.js",
+    "main.js": "/project_react_lush/static/js/main.f6637367.js",
     "static/js/787.b0d4e537.chunk.js": "/project_react_lush/static/js/787.b0d4e537.chunk.js",
     "static/media/slick.svg": "/project_react_lush/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/project_react_lush/static/media/slick.a4e97f5a2a64f0ab1323.eot",
@@ -9,11 +9,11 @@
     "static/media/slick.woff": "/project_react_lush/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/project_react_lush/index.html",
     "main.9ebb864d.css.map": "/project_react_lush/static/css/main.9ebb864d.css.map",
-    "main.80937cac.js.map": "/project_react_lush/static/js/main.80937cac.js.map",
+    "main.f6637367.js.map": "/project_react_lush/static/js/main.f6637367.js.map",
     "787.b0d4e537.chunk.js.map": "/project_react_lush/static/js/787.b0d4e537.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9ebb864d.css",
-    "static/js/main.80937cac.js"
+    "static/js/main.f6637367.js"
   ]
 }
