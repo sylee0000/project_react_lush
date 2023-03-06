@@ -1,17 +1,17 @@
 //data
 import mds from './mdData'
-import React, { Component } from "react";
+import React, {Component} from "react"
 //router
-import {Link} from 'react-router-dom'
+import {Routes, Route, Link} from 'react-router-dom' //eslint-disable-line no-unused-vars
 //scss
 import './Style/sliderComponent.scss'
 //slick
-import Slider from 'react-slick';
+import Slider from 'react-slick'
 //slick_css
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 //styled-components
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 
 const Material = styled.span`

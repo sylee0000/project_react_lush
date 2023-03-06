@@ -19,13 +19,6 @@
   height: $height;
 }
 
-/*---각 섹션들타이틀---*/
-
-.title{
-  @include title(center, 100px);
-  line-height: 100px;
-}
-
 /*---메인비주얼 txt---*/
 
 @mixin mainvisual_txt{
@@ -35,6 +28,13 @@
 
 @mixin mainvisual_s_txt{
   font-size: 25px;
+}
+
+/*---각 섹션들타이틀---*/
+
+.title{
+  @include title(center, 100px);
+  line-height: 100px;
 }
 
 .main_visual{
@@ -67,7 +67,21 @@
       @include size(288px);
       text-align: center;
       p{
-        height: 30px;
+        margin-bottom: 0;
+        height: 40px;
+      }
+      button{
+        padding: 5px 10px;
+        color: white;
+        border-radius: 20px;
+        line-height: 30px;
+        border: none;
+        background-color: #f2f2f2;
+        color: #999;
+        &:hover{
+          background-color: black;
+          color: white;
+        }
       }
     }
 }
@@ -76,6 +90,7 @@
   @include bannerSize(100%,400px);
   overflow: hidden;
   position: relative;
+  margin: 50px 0;
   .rolling_banner_box{
     width: 500%;
     height: 300px;
@@ -92,7 +107,7 @@
     0%{left: 0%;}
     25%{left: -100%;}
     50%{left: -200%;}
-    75%{left: -300%;}  
-    100%{left: 0%;}    
+    75%{left: -300%;}                        
+    100%{left: 0%;}                                                 
   }
 }

@@ -3,18 +3,20 @@ import bests from './bestData'
 //scss
 import './Style/home.scss'
 //Router
-import {Routes, Route, Link} from 'react-router-dom' //eslint-disable-line no-unused-vars
+import {Routes, Route, Link, useNavigate} from 'react-router-dom' //eslint-disable-line no-unused-vars
 //swiper
-import React, { useRef, useState } from "react"; //eslint-disable-line no-unused-vars
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import { Navigation,Autoplay } from "swiper";
+import React, {useRef, useState} from "react" //eslint-disable-line no-unused-vars
+import {Swiper, SwiperSlide} from "swiper/react"
+import "swiper/css"
+import "swiper/css/navigation"
+import {Navigation,Autoplay} from "swiper"
 //style
-import styled from 'styled-components';
+import styled from 'styled-components'
 //react_slick
 import MultipleItems from './SliderComponent'
-
+//reducx
+import {addItems} from './store' //상태관리하는 리덕스파일
+import {useDispatch} from 'react-redux'
 
 
 const Material = styled.span`
@@ -30,6 +32,9 @@ const Name = styled.p`
 `
 
 export default function Home(){
+
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   return(
     <>
@@ -89,6 +94,13 @@ export default function Home(){
                   <p>{best.title}</p>
                   <p>{best.price}</p>
                 </Link>
+                <button onClick={()=>{
+                    dispatch(addItems({id: best.id, name: best.name, quantity:1, price: best.price}))
+                    alert('장바구니에 추가 되었습니다.')
+                    navigate('/cart')
+                  }}
+                  >장바구니 담기
+                </button>
               </div>
             )
           })

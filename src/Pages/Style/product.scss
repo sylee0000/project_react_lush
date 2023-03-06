@@ -29,7 +29,8 @@
       width: 288px;
       text-align: center;
       p{
-        height: 30px;
+        margin-bottom: 0;
+        height: 40px;
       }
     }
 }
@@ -44,7 +45,8 @@
       @include size(288px);
       text-align: center;
       p{
-        height: 30px;
+        margin-bottom: 0;
+        height: 40px;
       }
     }
 }
@@ -65,6 +67,8 @@
         margin: 0 10px;
       }
       a{
+        display: block;
+        height: 60px;
         color: white;
       }
       &:hover{
@@ -77,10 +81,7 @@
   }
 }
 
-.more_txt{
-  font-size: 30px;
-  text-align: center;
-}
+
 
 
 

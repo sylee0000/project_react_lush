@@ -33,7 +33,7 @@ const cart = createSlice({
 
 //값을 변경할건데 기본값과 변할값이 들어가는게 reducers이다.
 
-export const {addCount, subCount, deleteItems, addItems, changeAmount} = cart.actions
+export const {addCount, subCount, deleteItems, addItems} = cart.actions
 //값을 만들었으면 내보내줘야하는데 리덕스의 기본은 import 와 export이다.
 
 export default configureStore({

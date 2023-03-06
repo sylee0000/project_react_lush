@@ -16,31 +16,39 @@ import Spa from './Pages/Spa'
 import Detail from './Pages/Detail'
 import MdDetail from './Pages/MdDetail'
 import Cart from './Pages/Cart'
-import bests from './Pages/bestData' //detail로 넘어가니깐..여기다가 import시켜줘야지
-import mds from './Pages/mdData' //detail로 넘어가니깐..여기다가 import시켜줘야지
+import bests from './Pages/bestData'
+import mds from './Pages/mdData' 
+import productsBath from './Pages/bathData';
+import BathDetail from './Pages/BathDetail'
+import ShowerDetail from './Pages/ShowerDetail'
+import productsShower from './Pages/showerData'
 
-import { useState } from 'react'; //훅을 사용해서 사이트를 넘기겠다.
+import {useState} from 'react'; //훅을 사용해서 사이트를 넘기겠다.
 
 
 function App() {
 
   const navigate = useNavigate(); 
   const [bestPro] = useState(bests); //초기값을 내가 만든 데이터의 값으로 받고 bestPro 라는 객체로 하겠다. 
-  const [mdChoice] = useState(mds); //초기값을 내가 만든 데이터의 값으로 받고 bestPro 라는 객체로 하겠다. 
+  const [mdChoice] = useState(mds); //초기값을 내가 만든 데이터의 값으로 받고 mdChoice 라는 객체로 하겠다.
+  const [bathPro] = useState(productsBath)
+  const [showerPro] = useState(productsShower)
+  
 
   return(
     <div className='App'>
       <Navbar bg="light" variant="light">
         <Container>
-          <Navbar.Brand onClick={()=>{navigate('/')}}>
-            <img src={process.env.PUBLIC_URL+'/images/main_logo.gif'} alt="러쉬메인로고" style={{width:150, height:70}}/>
+          <Navbar.Brand onClick={()=>{navigate('/project_react_lush')}}>
+            <img src={process.env.PUBLIC_URL+'/images/main_logo.gif'} alt="러쉬메인로고" className="main_logo"/>
           </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link onClick={()=>{navigate('/introduce')}}>러쉬소개</Nav.Link>
-            <Nav.Link onClick={()=>{navigate('/product')}}>product</Nav.Link>
+            <Nav.Link onClick={()=>{navigate('/product/bath')}}>제품보기</Nav.Link>
             <Nav.Link onClick={()=>{navigate('/location')}}>매장안내</Nav.Link>
             <Nav.Link onClick={()=>{navigate('/spa')}}>스파</Nav.Link>
             <Nav.Link onClick={()=>{navigate('/cart')}}>장바구니</Nav.Link>
+ 
           </Nav>
           <ul className='gnb'>
             <li><img src={process.env.PUBLIC_URL+'/images/logo_live.png'} alt="로고라이브이미지" style={{width:60, height:40}}/></li>
@@ -50,7 +58,7 @@ function App() {
       </Navbar>
 
       <Routes>
-        <Route path='/' element={<Home/>}></Route>
+        <Route path='/project_react_lush' element={<Home/>}></Route>
         <Route path='product/*' element={<Product/>}></Route>
         <Route path='introduce' element={<Introduce/>}></Route> 
         <Route path='location' element={<Location/>}></Route>
@@ -58,6 +66,8 @@ function App() {
         <Route path='detail/:id' element={<Detail bestPro={bestPro}/>}></Route>
         <Route path='mddetail/:id' element={<MdDetail mdChoice={mdChoice}/>}></Route>
         <Route path='cart' element={<Cart/>}></Route>
+        <Route path='bathdetail/:id' element={<BathDetail bathPro={bathPro}/>}></Route>
+        <Route path='showerdetail/:id' element={<ShowerDetail showerPro={showerPro}/>}></Route>
       </Routes>
 
       <div className="footer_icon">

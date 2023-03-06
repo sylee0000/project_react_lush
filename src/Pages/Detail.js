@@ -1,20 +1,20 @@
 //scss파일
 import './Style/detail.scss'
 //router
-import { useParams, Routes, Route, Link } from "react-router-dom" //eslint-disable-line no-unused-vars
-//useState
-import { useState } from 'react'; //카운트 관리
+import {useParams, Routes, Route, Link, useNavigate} from "react-router-dom" //eslint-disable-line no-unused-vars
 //reducx
-import { addItems } from './store'; //상태관리하는 리덕스파일
-import { useDispatch } from 'react-redux';
+import {addItems} from './store' //상태관리하는 리덕스파일
+import {useDispatch} from 'react-redux'
 //fontawesome
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faPlus} from '@fortawesome/free-solid-svg-icons'
-import {faMinus} from '@fortawesome/free-solid-svg-icons'
 import {faHeart} from '@fortawesome/free-solid-svg-icons'
 import {faCartShopping} from '@fortawesome/free-solid-svg-icons'
 //style
-import styled from 'styled-components';
+import styled from 'styled-components'
+//수량컴포넌트
+import {useState} from 'react' //카운트
+import Count from './Count'
+
 
 
 const Name = styled.p`
@@ -29,7 +29,8 @@ const Price = styled.p`
 `
 
 const Total = styled.p`
-  text-align: left;
+  text-align: right;
+  font-weight: bold;
 `
 
 const Button = styled.button`
@@ -48,23 +49,18 @@ const GetButton = styled(Button)`
   margin-left: 10px;
 `
 
-const CountButton = styled(GetButton)`
-  width: 20px;
-  height: 20px;
-  font-size: 18px;
-  background-color: white;
-  color: black;
-  margin: 0 20px;
-`
   
 export default function Detail(props){
 
   const {bestPro} = props //내가 만든 초기값을 객체화로 한걸 상속받겠다.
   const {id} = useParams() //가져올걸 사용하려면 useParams필요하다.
-  const dispatch = useDispatch()
+  const [count,setCount] = useState(1)
 
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   
   return(
+
     <section className="detail">
     
       <div className="detail_box">
@@ -80,16 +76,25 @@ export default function Detail(props){
           <hr/>
           <Price>
             ￦ {bestPro[id].price}
-            <span>{<Counter/>}</span>
+            <span>
+            <span>
+              <Count 
+                count={count}
+                plusClick={()=>setCount((prev)=>prev+1)}
+                minusClick={()=>setCount((prev)=>prev-1)}
+              />
+            </span>
+            </span>
           </Price>
           <hr/>
-          <Total>총 합계 금액</Total>
+          <Total>총 합계 금액 {(bestPro[id].price * count)}</Total>
           <Button style={{marginRight:10}}>
             <FontAwesomeIcon icon={faHeart}/>
           </Button>
           <Button onClick={()=>{
-            dispatch(addItems({id: bestPro[id].id, name: bestPro[id].name, quantity:1, price: bestPro[id].price}))
+            dispatch(addItems({id: bestPro[id].id, name: bestPro[id].name, quantity:count, price: bestPro[id].price*count}))
             alert('장바구니에 추가 되었습니다.')
+            navigate('/cart')
             }}
           ><FontAwesomeIcon icon={faCartShopping}/>
           </Button>
@@ -97,7 +102,6 @@ export default function Detail(props){
             바로구매
           </GetButton>
         </div>
-
       </div>
 
       <div>
@@ -112,24 +116,3 @@ export default function Detail(props){
     </section>
   )
 }
-
-//카운트 컴포넌트를 하나 생성해서 안에 넣어주기
-
-const Counter = () =>{
-  const [count,setCount] = useState(0)
-
-  return(
-    <span>
-      <CountButton onClick={()=>{setCount(count+1)}}>
-        <FontAwesomeIcon icon={faPlus}/>
-      </CountButton>
-      <span>{count}</span>
-      <CountButton onClick={()=>{setCount(count-1)}}>
-        <FontAwesomeIcon icon={faMinus}/>
-      </CountButton>
-    </span>
-  )
-}
-
-
-
